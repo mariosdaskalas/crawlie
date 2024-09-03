@@ -1,4 +1,5 @@
 This is a Python CLI program dedicated for discovering subdomains and folders of the targeted domain.
+
 In addition, the program can be used for discovering every possible webpage of the domain.
 
 ```shell
