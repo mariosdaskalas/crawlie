@@ -1,9 +1,18 @@
 import requests
 import re
 import urllib.parse as urlparse
+import argparse
 
-target = "http://127.0.0.1:8090"
 target_link = []
+
+parser = \
+    argparse.ArgumentParser(epilog='Command : python3 spider.py -u "https://cybernotes.uk"'
+                            )
+parser.add_argument('-u',
+                    help='Add URL for spider',
+                    required=True)
+args = parser.parse_args()
+target = args.u
 
 def extract(url):
     resp = requests.get(url)

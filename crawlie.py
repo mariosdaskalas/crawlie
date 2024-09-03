@@ -1,4 +1,5 @@
 import requests
+import argparse
 
 def request(url):
     try:
@@ -6,7 +7,14 @@ def request(url):
     except requests.exceptions.ConnectionError:
         pass
 
-target = "127.0.0.1:9003"
+parser = \
+    argparse.ArgumentParser(epilog='Command : python3 crawlie.py -u "cybernotes.uk"'
+                            )
+parser.add_argument('-u',
+                    help='Add URL for crawler',
+                    required=True)
+args = parser.parse_args()
+target = args.u
 c1 = 0
 c2 = 0
 
